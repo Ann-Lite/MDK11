@@ -46,7 +46,7 @@ namespace MDK11
             {
                 for (int j = 0; j < matr.GetLength(1); j++)
                 {
-                    Console.Write("{0,3}",matr[i,j]);
+                    Console.Write("{0,3}", matr[i, j]);
                 }
                 Console.WriteLine();
             }
