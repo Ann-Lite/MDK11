@@ -15,13 +15,21 @@ namespace MDK11
             string pos;
             Random random = new Random();
             int[,] _matr = new int[10, 10];
+            int[,] _matr1 = new int[10, 10];
             _matr = Creat(ref _matr, random);
             DoMatr(_matr, out pos);
             WriteMatr(_matr);
             Console.Write(pos);
+            Console.WriteLine();
+            Random rand1 = new Random();
+            Console.WriteLine();
+            _matr1 = Creat(ref _matr1, rand1);
+            DoMatr(_matr1, out pos);
+            WriteMatr(_matr1);
+            Console.Write(pos);
             Console.ReadKey();
         }
-        private static int [,] Creat(ref int [,] matr, Random random)
+        private static int [,] Creat(ref int [,] matr, Random random)//Заполнение матрици
         {
             for (int i = 0; i < matr.GetLength(0); i++)
             {
@@ -32,7 +40,7 @@ namespace MDK11
             } return matr;
         }
 
-        private static void WriteMatr(int[,] matr)
+        private static void WriteMatr(int[,] matr)//Вывод матрицы
         {
             for (int i = 0; i < matr.GetLength(0); i++)
             {
@@ -45,7 +53,7 @@ namespace MDK11
             return;
         }
 
-        private static void DoMatr(int[,] matr, out string pos)
+        private static void DoMatr(int[,] matr, out string pos)//поиск столбцов с положительным произведение отрицательных чисел в столбце
         {
             int kol;
             pos = "";
